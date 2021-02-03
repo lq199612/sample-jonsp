@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="http://127.0.0.1:3000?callback=f"></script>
+</head>
+<body>
+	
+</body>
+<script type="module">
+	import jsonp from './jsonp.js'
+	const f = (err,data) => {
+		if(err){
+			console.error(err);
+		}
+		else{
+			console.log(data);
+		}
+	}
+
+	jsonp('http://127.0.0.1:3000', {callfn:'callfn'},f)
+	jsonp('http://127.0.0.1:3000', {callfn:'callfn'},f)
+
+</script>
+</html>
